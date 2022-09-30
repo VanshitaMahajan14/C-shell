@@ -21,9 +21,9 @@ char *pinfocmd[50];    // for pinfo command
 char *discargs[1000];  // for discover command
 
 char *commands[1000];  // store ; tokenised commands
-char *cmd[1000];       // store space separated commands that are not built in
+char *cmd[1000];       // store space separated commands that are not built-in
 int bgPid[1000];       // store process IDs of backgroud commands
-char *bgCommand[1000]; // empty array initialised
+char *bgCommand[1000]; // array that stores background commands
 
 int yes = 0;
 int count = 0;
@@ -126,7 +126,7 @@ int main()
                 ck = 1;
             else // last command is foreground
                 ck = 0;
-            for (int k = 0; k < countamp; k++) // now start comparing &-parsed commands
+            for (int k = 0; k < countamp; k++) 
             {
                 char *token = strtok(backarr[k], " ");
                 if (strcmp(token, "echo") == 0)
